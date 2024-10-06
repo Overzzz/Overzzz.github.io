@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Laporan I Praktikum Sistem Paralel dan Terdistribusi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Pembahasan</h2>
+    
+        <div class="section">
+            <h3 class="section-title">Konfigurasi MikroTik dengan WinBox</h3>
+
+            <h4>A. Pengenalan WinBox</h4>
+            <ol>
+                <li>WinBox adalah sebuah aplikasi grafis yang dirancang oleh MikroTik untuk memungkinkan pengelolaan dan konfigurasi perangkat RouterOS dengan antarmuka pengguna yang intuitif dan responsif. Aplikasi ini memudahkan administrator jaringan dalam mengelola perangkat MikroTik tanpa harus menggunakan perintah berbasis teks (command line interface atau CLI).</li>
+                <li>Meskipun dikembangkan secara native untuk sistem operasi Windows (Win32/Win64), WinBox juga dapat dijalankan pada sistem operasi lain seperti macOS dan Linux melalui emulator Wine. Aplikasi ini menyediakan akses lengkap ke semua fitur RouterOS, termasuk routing, manajemen firewall, pengaturan bandwidth, konfigurasi hotspot, dan manajemen titik akses nirkabel (Wi-Fi).</li>
+            </ol>
+
+            <h4>3. Keunggulan WinBox</h4>
+            <ul>
+                <li>Antarmuka grafis yang sederhana Memungkinkan konfigurasi cepat tanpa perlu menghafal perintah CLI.</li>
+                <li>Fleksibel Dapat diakses dari berbagai platform dengan bantuan emulator.</li>
+                <li>Real-time monitoring Menyediakan informasi dan statistik jaringan secara langsung.</li>
+                <li>Multifungsi Mengelola semua aspek router seperti DHCP server, NAT, firewall, dan lain-lain dengan mudah.</li>
+            </ul>
+
+            <h4>B. Topologi Jaringan dan Mode Operasi MikroTik</h4>
+            <ol>
+                <li>MikroTik RouterOS menawarkan fleksibilitas tinggi dalam pengelolaan jaringan, memungkinkan pengguna untuk mengkonfigurasinya sebagai router atau bridge. Setiap mode ini memiliki fungsi dan kegunaan yang berbeda sesuai dengan kebutuhan jaringan.</li>
+                <li>Contoh Kasus Penggunaan:
+                    <ul>
+                        <li>Mode Router: Digunakan saat ingin menghubungkan jaringan internal ke internet, menyediakan fitur firewall untuk keamanan, dan mengatur distribusi IP melalui DHCP.</li>
+                        <li>Mode Bridge: Cocok untuk menyatukan beberapa jaringan di dalam satu jaringan logis, seperti menyatukan jaringan kantor dengan jaringan Wi-Fi publik.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>C. Langkah-Langkah Konfigurasi MikroTik dalam Mode Router</h4>
+            <p>Berikut adalah prosedur untuk mengkonfigurasi MikroTik RB931-2nD sebagai router dengan alamat IP lokal 192.168.1.40/24. Konfigurasi ini akan membuat perangkat dapat mendistribusikan koneksi internet kepada klien di jaringan lokal.</p>
+
+            <ol>
+                <li>Menghubungkan MikroTik ke PC: Hubungkan router MikroTik ke komputer menggunakan kabel Ethernet. Pilih salah satu port dari port 2 hingga port 5 pada perangkat RB931-2nD.</li>
+                <li>Mengunduh dan Membuka WinBox: Unduh WinBox dari situs resmi MikroTik di <a href="https://mikrotik.com/download">mikrotik.com</a>, lalu buka aplikasi dan login menggunakan alamat MAC router yang terdeteksi.</li>
+                <li>Menghapus Konfigurasi Default: Pilih opsi “Remove Configuration” untuk memulai konfigurasi dari awal tanpa pengaturan default yang dapat menyebabkan konflik.</li>
+                <li>Menetapkan Alamat IP untuk LAN: Tambahkan alamat IP untuk LAN, misalnya 192.168.1.40/24 melalui menu IP > Addresses.</li>
+                <li>Mengkonfigurasi DHCP Server: Tambahkan DHCP Server baru untuk memungkinkan perangkat dalam jaringan mendapatkan IP secara otomatis.</li>
+                <li>Menambahkan NAT untuk Akses Internet: Tambahkan aturan NAT pada tab Firewall > NAT dengan action “masquerade” untuk membolehkan akses internet.</li>
+                <li>Menyetel DNS Server: Tambahkan DNS Server seperti 8.8.8.8 di menu IP > DNS untuk memungkinkan akses ke internet.</li>
+                <li>Menyimpan Pengaturan dan Reboot: Simpan pengaturan dan reboot perangkat MikroTik melalui menu System > Reboot.</li>
+            </ol>
+
+            <h4>D. Pengujian dan Troubleshooting</h4>
+            <p>Setelah reboot, pastikan perangkat dalam jaringan dapat:</p>
+            <ul>
+                <li>Mendapatkan IP otomatis dari DHCP server.</li>
+                <li>Mengakses internet dengan IP yang diberikan.</li>
+                <li>Melakukan ping ke perangkat lain dalam jaringan lokal dan internet.</li>
+            </ul>
+            <p>Jika terjadi masalah, periksa koneksi fisik, verifikasi DHCP Server, dan pastikan aturan NAT sudah diterapkan dengan benar.</p>
+        </div>
+
+        <div class="section">
+            <a href="index.html" class="btn">Kembali ke Halaman Utama</a>
+        </div>
+        
+    </div>
+
+</body>
+</html>
