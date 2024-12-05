@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pembahasan NAT dan Bridge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Pembahasan</h2>
+
+        <div class="section">
+            <h3 class="section-title">1. NAT (Network Address Translation)</h3>
+            <p>NAT adalah teknik yang digunakan untuk menerjemahkan alamat IP dalam sebuah jaringan. Biasanya digunakan untuk menyembunyikan alamat IP privat di belakang satu atau beberapa alamat IP publik. NAT membantu dalam mengurangi konsumsi alamat IP publik dan meningkatkan keamanan jaringan.</p>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">2. NAT di Menu Firewall</h3>
+            <p>Pada router atau perangkat jaringan, NAT umumnya dikonfigurasi melalui menu Firewall karena di situlah proses filtering dan manajemen alur paket terjadi.</p>
+            <ul>
+                <li><strong>Pengaturan Routing dan Translasi:</strong> Mengatur bagaimana IP privat diterjemahkan ke IP publik.</li>
+                <li><strong>Source NAT (Masquerade):</strong> Menyembunyikan IP privat di balik satu IP publik untuk koneksi keluar.</li>
+                <li><strong>Destination NAT (DNAT):</strong> Mengalihkan paket dari luar ke alamat internal tertentu.</li>
+                <li><strong>Control dan Filter Paket:</strong> Mengatur port forwarding dan QoS.</li>
+                <li><strong>Keamanan:</strong> Menyembunyikan struktur jaringan internal.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">3. NAT di Menu Bridge</h3>
+            <p>Bridge bekerja pada lapisan 2 OSI, sedangkan NAT terkait dengan lapisan 3. Oleh karena itu, penggunaan NAT di menu Bridge terbatas pada skenario tertentu.</p>
+            <ul>
+                <li><strong>Ciri dan Fungsi:</strong> Digunakan dalam bridging dengan translasi IP minimal.</li>
+                <li><strong>Keterbatasan:</strong> Kurang fleksibel dan tidak cocok untuk jaringan skala besar.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">4. AP Bridge vs Bridge</h3>
+            <ul>
+                <li><strong>AP Bridge:</strong> Mode Access Point yang menghubungkan perangkat wireless dan kabel dalam satu subnet.</li>
+                <li><strong>Bridge:</strong> Menghubungkan segmen jaringan di lapisan 2 tanpa memancarkan sinyal wireless.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">5. Kesimpulan</h3>
+            <ul>
+                <li><strong>NAT di Firewall:</strong> Cocok untuk routing dan pengamanan jaringan.</li>
+                <li><strong>NAT di Bridge:</strong> Digunakan dalam skenario layer 2 tertentu.</li>
+                <li><strong>AP Bridge:</strong> Menghubungkan jaringan wireless dan kabel melalui Access Point.</li>
+                <li><strong>Bridge:</strong> Menghubungkan segmen jaringan di layer 2 tanpa wireless.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <a href="index.html" class="btn">Kembali ke Halaman Utama</a>
+        </div>
+    </div>
+</body>
+</html>

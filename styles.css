@@ -2,8 +2,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.8;
-    background-color: #1b1b1b;
-    color: #f0f0f0;
+    background-color: #f0f4f8;
+    color: #333333;
     margin: 0;
     padding: 0;
 }
@@ -11,32 +11,33 @@ body {
 .container {
     width: 85%;
     margin: 50px auto;
-    background-color: #292929;
+    background: linear-gradient(145deg, #ffffff, #e3e8ed);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    border-left: 10px solid #f5ba13;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), inset 0 0 8px rgba(0, 0, 0, 0.05);
+    border-left: 8px solid #64b5f6;
     transition: all 0.3s ease;
 }
 
 .container:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), inset 0 0 10px rgba(100, 181, 246, 0.3);
 }
 
+/* Headings */
 h1, h2, h3 {
-    text-align: center; /* Heading tetap di tengah */
-    color: #f5ba13;
+    text-align: center;
+    color: #64b5f6;
     margin-bottom: 20px;
 }
 
 h1 {
     font-size: 2.8em;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px;
 }
 
 h2 {
-    font-size: 2.3em;
+    font-size: 2.2em;
 }
 
 h3 {
@@ -44,31 +45,42 @@ h3 {
     margin-top: 40px;
 }
 
-/* Agar teks diisi laporan rata kiri */
+/* Paragraphs and Lists */
 p, ul {
-    text-align: justify; /* Mengatur agar teks isi rata kiri-kanan */
-    color: #cccccc;
+    text-align: justify;
+    color: #666666;
     margin-bottom: 20px;
 }
 
-/* Agar teks elemen <ul> (list) lebih ke kiri */
 ul {
     margin: 20px 0;
     padding-left: 25px;
-    color: #cccccc;
+    color: #444444;
 }
 
 ul li {
     margin-bottom: 10px;
-    list-style-type: square;
+    list-style-type: disc;
+    padding-left: 5px;
 }
 
 ul li strong {
-    color: #f5ba13;
+    color: #64b5f6;
 }
 
+/* Section */
 .section {
     margin-top: 40px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.8em;
+    color: #64b5f6;
+    text-transform: uppercase;
+    border-bottom: 3px solid #64b5f6;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 /* Author and Info Section */
@@ -79,26 +91,17 @@ ul li strong {
 
 .author p {
     margin: 5px 0;
-    color: #f5ba13;
+    color: #64b5f6;
     font-weight: bold;
 }
 
 .info {
     font-style: italic;
-    background-color: #f5ba13;
+    background: #64b5f6;
     padding: 10px 15px;
     border-radius: 8px;
-    color: #292929;
-}
-
-/* Section Titles */
-.section-title {
-    font-size: 1.7em;
-    color: #f5ba13;
-    text-transform: uppercase;
-    border-bottom: 2px solid #f5ba13;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 1em;
 }
 
 /* Footer */
@@ -106,27 +109,39 @@ ul li strong {
     text-align: center;
     margin-top: 60px;
     font-size: 15px;
-    color: #ffffff;
-    background-color: #292929;
+    color: #333333;
+    background: linear-gradient(145deg, #ffffff, #e3e8ed);
     padding: 20px 0;
-    border-top: 3px solid #f5ba13;
+    border-top: 3px solid #64b5f6;
 }
 
-/* Button Style */
+/* Button Styles */
 .btn {
-    background-color: #f5ba13;
-    color: #292929;
-    padding: 10px 20px;
-    border-radius: 5px;
+    background: linear-gradient(145deg, #64b5f6, #42a5f5);
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 8px;
     font-size: 16px;
     text-transform: uppercase;
     cursor: pointer;
     border: none;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(100, 181, 246, 0.4);
 }
 
 .btn:hover {
-    background-color: #d4a10e;
+    background: linear-gradient(145deg, #42a5f5, #64b5f6);
+    box-shadow: 0 6px 12px rgba(66, 165, 245, 0.6);
+}
+
+/* Button Grid */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
 }
 
 /* Responsive Styles */
@@ -141,31 +156,6 @@ ul li strong {
     }
 
     h2 {
-        font-size: 1.7em;
+        font-size: 1.8em;
     }
-}
-
-/* Button Grid */
-.button-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Membuat grid 3 kolom */
-    gap: 15px; /* Jarak antar tombol */
-    margin-top: 30px;
-}
-/* Gaya untuk tombol */
-.btn {
-    background-color: #f5ba13;
-    color: #292929;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-}
-
-.btn:hover {
-    background-color: #d4a10e;
 }
